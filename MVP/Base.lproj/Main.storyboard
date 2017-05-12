@@ -1,26 +1,160 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zb5-Dq-B5s">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="SEO-6S-4sA">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zb5-Dq-B5s" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="QBj-Fa-vI6"/>
+                        <viewControllerLayoutGuide type="bottom" id="hoz-Ng-Nfx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="1oL-la-DNO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf9-ub-9ef">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VD0-5U-MLc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqV-g3-PQI" customClass="IPDFCameraViewController">
+                                <subviews>
+                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmO-eZ-Cjg">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="4eh-Vu-mcK"/>
+                                            <constraint firstAttribute="width" constant="66" id="byg-E6-kBz"/>
+                                        </constraints>
+                                        <state key="normal" image="capture_button">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="captureButton:" destination="zb5-Dq-B5s" eventType="touchUpInside" id="q1a-kl-Ofs"/>
+                                        </connections>
+                                    </button>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="focusIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="eik-9T-gcp">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="U3B-7w-BGs"/>
+                                            <constraint firstAttribute="width" constant="75" id="yvy-IZ-srU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGW-PR-ksc" userLabel="Adjust Bar">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jv-b6-rRl">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="kLh-Ai-FJe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
+                                                <state key="normal" title="CROP On">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.76078431369999999" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="borderDetectToggle:" destination="zb5-Dq-B5s" eventType="touchUpInside" id="vEe-cD-hd7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPX-z6-Ozj">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="0c4-wh-EgI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
+                                                <state key="normal" title="FILTER">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="filterToggle:" destination="zb5-Dq-B5s" eventType="touchUpInside" id="duv-ou-Ufm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO1-5N-Tpk">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="LkK-g6-mhI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
+                                                <state key="normal" title="FLASH Off">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="torchToggle:" destination="zb5-Dq-B5s" eventType="touchUpInside" id="DHa-S7-C5w"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="5B9-1I-jwI"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Jv-b6-rRl" secondAttribute="bottom" id="8cD-cm-crm"/>
+                                            <constraint firstItem="6Jv-b6-rRl" firstAttribute="top" secondItem="KGW-PR-ksc" secondAttribute="top" id="8vk-ZA-Ngn"/>
+                                            <constraint firstItem="gO1-5N-Tpk" firstAttribute="leading" secondItem="KGW-PR-ksc" secondAttribute="leading" id="EDd-at-AQ9"/>
+                                            <constraint firstAttribute="centerX" secondItem="bPX-z6-Ozj" secondAttribute="centerX" id="JCG-re-u2T"/>
+                                            <constraint firstAttribute="bottom" secondItem="bPX-z6-Ozj" secondAttribute="bottom" id="OD2-rt-XkP"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Jv-b6-rRl" secondAttribute="trailing" id="QGu-xy-Ky9"/>
+                                            <constraint firstItem="bPX-z6-Ozj" firstAttribute="top" secondItem="KGW-PR-ksc" secondAttribute="top" id="fFm-uD-3fI"/>
+                                            <constraint firstAttribute="bottom" secondItem="gO1-5N-Tpk" secondAttribute="bottom" id="lDn-i0-7GP"/>
+                                            <constraint firstItem="gO1-5N-Tpk" firstAttribute="top" secondItem="KGW-PR-ksc" secondAttribute="top" id="njX-Vo-Ug1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="AmO-eZ-Cjg" secondAttribute="bottom" constant="54" id="1sD-b5-wTh"/>
+                                    <constraint firstItem="eik-9T-gcp" firstAttribute="leading" secondItem="KGW-PR-ksc" secondAttribute="leading" id="bEi-yD-YRC"/>
+                                    <constraint firstAttribute="bottom" secondItem="KGW-PR-ksc" secondAttribute="bottom" id="bXz-gc-au6"/>
+                                    <constraint firstAttribute="trailing" secondItem="KGW-PR-ksc" secondAttribute="trailing" id="cEW-Or-8Ag"/>
+                                    <constraint firstAttribute="centerX" secondItem="AmO-eZ-Cjg" secondAttribute="centerX" id="m2O-lM-bWj"/>
+                                    <constraint firstItem="KGW-PR-ksc" firstAttribute="leading" secondItem="qqV-g3-PQI" secondAttribute="leading" id="sJR-er-5FE"/>
+                                    <constraint firstItem="eik-9T-gcp" firstAttribute="top" secondItem="qqV-g3-PQI" secondAttribute="top" id="tda-av-U5A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="qqV-g3-PQI" firstAttribute="top" secondItem="gf9-ub-9ef" secondAttribute="bottom" id="8Y6-bT-axO"/>
+                            <constraint firstItem="gf9-ub-9ef" firstAttribute="leading" secondItem="1oL-la-DNO" secondAttribute="leading" id="9BN-jF-kd3"/>
+                            <constraint firstAttribute="trailing" secondItem="qqV-g3-PQI" secondAttribute="trailing" id="CET-15-qWS"/>
+                            <constraint firstItem="qqV-g3-PQI" firstAttribute="bottom" secondItem="hoz-Ng-Nfx" secondAttribute="top" id="QtO-hB-sq1"/>
+                            <constraint firstItem="qqV-g3-PQI" firstAttribute="leading" secondItem="1oL-la-DNO" secondAttribute="leading" id="RqK-8N-drS"/>
+                            <constraint firstItem="gf9-ub-9ef" firstAttribute="top" secondItem="QBj-Fa-vI6" secondAttribute="bottom" id="jbl-BO-MG8"/>
+                            <constraint firstItem="qqV-g3-PQI" firstAttribute="leading" secondItem="gf9-ub-9ef" secondAttribute="trailing" constant="-600" id="wVz-jN-Wg5"/>
+                            <constraint firstAttribute="trailing" secondItem="gf9-ub-9ef" secondAttribute="trailing" id="zt4-nj-7X2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wVz-jN-Wg5"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tQB-dI-LmF" appends="YES" id="koJ-0O-KTN"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="cameraViewController" destination="qqV-g3-PQI" id="Ayf-FL-A8c"/>
+                        <outlet property="focusIndicator" destination="eik-9T-gcp" id="s8J-hi-Lnf"/>
+                        <outlet property="titleLabel" destination="gf9-ub-9ef" id="hCv-of-UVn"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vh5-Es-4AC" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tQB-dI-LmF">
+                    <connections>
+                        <action selector="focusGesture:" destination="zb5-Dq-B5s" id="5gm-jB-OPl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="capture_button" width="66" height="66"/>
+        <image name="focusIndicator" width="66" height="66"/>
+    </resources>
 </document>
